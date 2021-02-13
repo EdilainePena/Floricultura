@@ -167,14 +167,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_usuarioActionPerformed
 
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
-        
-        if(campo_usuario.getText().equals("admin") && campo_senha.getText().equals("1234"))
-        {
-           
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Usuário ou Senha Incorretos!!!");
+
+        if (campo_usuario.getText().equals("admin") && campo_senha.getText().equals("1234")) {
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário ou Senha Incorretos!!!");
         }
     }//GEN-LAST:event_bt_entrarActionPerformed
 
