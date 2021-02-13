@@ -14,7 +14,7 @@ import Model.Produto;
  */
 public class Main {
      public static void main(String[] args) {
-       
+         System.out.println("Principal.Main.main()");
         Produto produto = new Produto();
         produto.setNome("rosa");
         produto.setPreco_custo(5);
