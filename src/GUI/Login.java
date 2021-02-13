@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author edila
@@ -32,9 +34,9 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        campo_senha = new javax.swing.JTextField();
+        campo_usuario = new javax.swing.JTextField();
+        bt_entrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -56,34 +58,34 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 7, 43));
         jLabel3.setText("Usuário:");
 
-        jTextField3.setBackground(new java.awt.Color(238, 219, 254));
-        jTextField3.setForeground(new java.awt.Color(51, 7, 43));
-        jTextField3.setToolTipText("");
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 7, 43)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        campo_senha.setBackground(new java.awt.Color(238, 219, 254));
+        campo_senha.setForeground(new java.awt.Color(51, 7, 43));
+        campo_senha.setToolTipText("");
+        campo_senha.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 7, 43)));
+        campo_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                campo_senhaActionPerformed(evt);
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(238, 219, 254));
-        jTextField4.setForeground(new java.awt.Color(51, 7, 43));
-        jTextField4.setToolTipText("");
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 7, 43)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        campo_usuario.setBackground(new java.awt.Color(238, 219, 254));
+        campo_usuario.setForeground(new java.awt.Color(51, 7, 43));
+        campo_usuario.setToolTipText("");
+        campo_usuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 7, 43)));
+        campo_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                campo_usuarioActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(238, 219, 254));
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 7, 43));
-        jButton1.setText("Entrar");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bt_entrar.setBackground(new java.awt.Color(238, 219, 254));
+        bt_entrar.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        bt_entrar.setForeground(new java.awt.Color(51, 7, 43));
+        bt_entrar.setText("Entrar");
+        bt_entrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        bt_entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bt_entrarActionPerformed(evt);
             }
         });
 
@@ -94,10 +96,10 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(bt_entrar)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)
                         .addComponent(jLabel1)))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -108,13 +110,13 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(bt_entrar)
                 .addContainerGap())
         );
 
@@ -156,17 +158,25 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void campo_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_senhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_campo_senhaActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void campo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_usuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_campo_usuarioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
+        
+        if(campo_usuario.getText().equals("admin") && campo_senha.getText().equals("1234"))
+        {
+           
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Usuário ou Senha Incorretos!!!");
+        }
+    }//GEN-LAST:event_bt_entrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,13 +215,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bt_entrar;
+    private javax.swing.JTextField campo_senha;
+    private javax.swing.JTextField campo_usuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
