@@ -42,7 +42,7 @@ public class Funcionário extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLayeredPane3 = new javax.swing.JLayeredPane();
-        jTextField3 = new javax.swing.JTextField();
+        tf_nome = new javax.swing.JTextField();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         jTextField4 = new javax.swing.JTextField();
@@ -136,14 +136,14 @@ public class Funcionário extends javax.swing.JFrame {
 
         jLayeredPane3.setBackground(new java.awt.Color(215, 193, 235));
         jLayeredPane3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jLayeredPane3.setForeground(new java.awt.Color(215, 193, 235));
+        jLayeredPane3.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField3.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField3.setToolTipText("");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tf_nome.setBackground(new java.awt.Color(215, 193, 235));
+        tf_nome.setToolTipText("");
+        tf_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                tf_nomeActionPerformed(evt);
             }
         });
 
@@ -241,7 +241,7 @@ public class Funcionário extends javax.swing.JFrame {
             }
         });
 
-        jLayeredPane3.setLayer(jTextField3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_nome, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -268,7 +268,7 @@ public class Funcionário extends javax.swing.JFrame {
                     .addGroup(jLayeredPane3Layout.createSequentialGroup()
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
+                        .addComponent(tf_nome))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,7 +308,7 @@ public class Funcionário extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
+                    .addComponent(tf_nome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,9 +361,8 @@ public class Funcionário extends javax.swing.JFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(jTextField1)
                         .addGap(5, 5, 5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -457,9 +456,9 @@ public class Funcionário extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tf_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tf_nomeActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -529,7 +528,6 @@ public class Funcionário extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -541,5 +539,6 @@ public class Funcionário extends javax.swing.JFrame {
     private java.awt.Label label4;
     private java.awt.Label label5;
     private java.awt.Label label6;
+    private javax.swing.JTextField tf_nome;
     // End of variables declaration//GEN-END:variables
 }
