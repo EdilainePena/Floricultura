@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author edila
  */
-public class Produtos extends javax.swing.JFrame {
+public class Tela_funcionario extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
      */
-    public Produtos() {
+    public Tela_funcionario() {
         initComponents();
     }
 
@@ -34,28 +34,30 @@ public class Produtos extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
+        bt_produto = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        bt_pesquisar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabela_funcionario = new javax.swing.JTable();
         jLayeredPane3 = new javax.swing.JLayeredPane();
-        jTextField3 = new javax.swing.JTextField();
+        tf_nome = new javax.swing.JTextField();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tf_cpf = new javax.swing.JTextField();
+        tf_telefone = new javax.swing.JTextField();
         label3 = new java.awt.Label();
-        jTextField6 = new javax.swing.JTextField();
+        tf_data_nascimento = new javax.swing.JTextField();
         label4 = new java.awt.Label();
         label5 = new java.awt.Label();
-        jTextField7 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        tf_salario = new javax.swing.JTextField();
+        bt_sair = new javax.swing.JButton();
+        bt_atualizar = new javax.swing.JButton();
+        bt_cadastrar = new javax.swing.JButton();
+        bt_excluir = new javax.swing.JButton();
+        label6 = new java.awt.Label();
+        tf_funcao = new javax.swing.JTextField();
 
         jTextField2.setText("jTextField2");
 
@@ -78,12 +80,12 @@ public class Produtos extends javax.swing.JFrame {
         jLayeredPane2.setBackground(new java.awt.Color(240, 240, 240));
         jLayeredPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 2, true));
 
-        jButton1.setBackground(new java.awt.Color(215, 193, 235));
-        jButton1.setText("Produto");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bt_produto.setBackground(new java.awt.Color(215, 193, 235));
+        bt_produto.setText("Produto");
+        bt_produto.setBorder(null);
+        bt_produto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bt_produtoActionPerformed(evt);
             }
         });
 
@@ -108,18 +110,18 @@ public class Produtos extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(215, 193, 235));
-        jButton3.setText("Pesquisar");
-        jButton3.setBorder(null);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bt_pesquisar.setBackground(new java.awt.Color(215, 193, 235));
+        bt_pesquisar.setText("Pesquisar");
+        bt_pesquisar.setBorder(null);
+        bt_pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bt_pesquisarActionPerformed(evt);
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(215, 193, 235));
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tabela_funcionario.setBackground(new java.awt.Color(215, 193, 235));
+        Tabela_funcionario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        Tabela_funcionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -130,118 +132,131 @@ public class Produtos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(Tabela_funcionario);
 
         jLayeredPane3.setBackground(new java.awt.Color(215, 193, 235));
         jLayeredPane3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jLayeredPane3.setForeground(new java.awt.Color(215, 193, 235));
+        jLayeredPane3.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField3.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField3.setToolTipText("");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tf_nome.setBackground(new java.awt.Color(215, 193, 235));
+        tf_nome.setToolTipText("");
+        tf_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                tf_nomeActionPerformed(evt);
             }
         });
 
         label1.setBackground(new java.awt.Color(215, 193, 235));
         label1.setText("Nome:");
 
-        label2.setText("Preço de custo:");
+        label2.setText("CPF:");
 
-        jTextField4.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField4.setToolTipText("");
-        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        tf_cpf.setBackground(new java.awt.Color(215, 193, 235));
+        tf_cpf.setToolTipText("");
+        tf_cpf.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                tf_cpfActionPerformed(evt);
             }
         });
 
-        jTextField5.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        tf_telefone.setBackground(new java.awt.Color(215, 193, 235));
+        tf_telefone.setToolTipText("");
+        tf_telefone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                tf_telefoneActionPerformed(evt);
             }
         });
 
-        label3.setText("Preço de Venda:");
+        label3.setText("Telefone:");
 
-        jTextField6.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField6.setToolTipText("");
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        tf_data_nascimento.setBackground(new java.awt.Color(215, 193, 235));
+        tf_data_nascimento.setToolTipText("");
+        tf_data_nascimento.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_data_nascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                tf_data_nascimentoActionPerformed(evt);
             }
         });
 
-        label4.setText("Quantidade disponível:");
+        label4.setText("Data de nascimento: ");
 
-        label5.setText("Descição:");
+        label5.setText("Salário:");
 
-        jTextField7.setBackground(new java.awt.Color(215, 193, 235));
-        jTextField7.setToolTipText("");
-        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        tf_salario.setBackground(new java.awt.Color(215, 193, 235));
+        tf_salario.setToolTipText("");
+        tf_salario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_salario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                tf_salarioActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(215, 193, 235));
-        jButton4.setText("Sair");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bt_sair.setBackground(new java.awt.Color(215, 193, 235));
+        bt_sair.setText("Sair");
+        bt_sair.setBorder(null);
+        bt_sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                bt_sairActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(215, 193, 235));
-        jButton6.setText("Atualizar");
-        jButton6.setBorder(null);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        bt_atualizar.setBackground(new java.awt.Color(215, 193, 235));
+        bt_atualizar.setText("Atualizar");
+        bt_atualizar.setBorder(null);
+        bt_atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                bt_atualizarActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(215, 193, 235));
-        jButton7.setText("Cadastrar");
-        jButton7.setBorder(null);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        bt_cadastrar.setBackground(new java.awt.Color(215, 193, 235));
+        bt_cadastrar.setText("Cadastrar");
+        bt_cadastrar.setBorder(null);
+        bt_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                bt_cadastrarActionPerformed(evt);
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(215, 193, 235));
-        jButton8.setText("Excluir");
-        jButton8.setBorder(null);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        bt_excluir.setBackground(new java.awt.Color(215, 193, 235));
+        bt_excluir.setText("Excluir");
+        bt_excluir.setBorder(null);
+        bt_excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                bt_excluirActionPerformed(evt);
             }
         });
 
-        jLayeredPane3.setLayer(jTextField3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        label6.setText("Função: ");
+
+        tf_funcao.setBackground(new java.awt.Color(215, 193, 235));
+        tf_funcao.setToolTipText("");
+        tf_funcao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
+        tf_funcao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_funcaoActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane3.setLayer(tf_nome, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_cpf, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_telefone, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_data_nascimento, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(label5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jTextField7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jButton6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jButton7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jButton8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_salario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(bt_sair, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(bt_atualizar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(bt_cadastrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(bt_excluir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(label6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(tf_funcao, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
         jLayeredPane3.setLayout(jLayeredPane3Layout);
@@ -253,32 +268,41 @@ public class Produtos extends javax.swing.JFrame {
                     .addGroup(jLayeredPane3Layout.createSequentialGroup()
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tf_nome))
                     .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane3Layout.createSequentialGroup()
+                                .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_salario))
+                            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7)))
+                        .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                        .addComponent(tf_telefone, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tf_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tf_funcao)))
+                            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bt_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jLayeredPane3Layout.setVerticalGroup(
@@ -287,30 +311,32 @@ public class Produtos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
+                    .addComponent(tf_nome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField4)
+                    .addComponent(tf_cpf)
                     .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(tf_data_nascimento)
+                    .addComponent(tf_telefone, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_funcao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bt_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         jLayeredPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(bt_pesquisar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLayeredPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -326,7 +352,7 @@ public class Produtos extends javax.swing.JFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(jTextField1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bt_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -334,17 +360,17 @@ public class Produtos extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(jTextField1)
                         .addGap(5, 5, 5)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jLayeredPane2.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(bt_produto, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLayeredPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -353,9 +379,9 @@ public class Produtos extends javax.swing.JFrame {
         jLayeredPane2Layout.setHorizontalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(bt_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jLayeredPane1)
@@ -364,7 +390,7 @@ public class Produtos extends javax.swing.JFrame {
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addComponent(jLayeredPane1)
@@ -385,9 +411,11 @@ public class Produtos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bt_produtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_produtoActionPerformed
+        Tela_produto tp = new Tela_produto();
+        tp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bt_produtoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -397,45 +425,49 @@ public class Produtos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void tf_funcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_funcaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_tf_funcaoActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void bt_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_bt_excluirActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_bt_cadastrarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void bt_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_atualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_bt_atualizarActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_bt_sairActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void tf_salarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_salarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_tf_salarioActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void tf_data_nascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_data_nascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_tf_data_nascimentoActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void tf_telefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_telefoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_tf_telefoneActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tf_cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_cpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tf_cpfActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void tf_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_tf_nomeActionPerformed
+
+    private void bt_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_pesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_pesquisarActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -458,13 +490,13 @@ public class Produtos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_funcionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_funcionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_funcionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Produtos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_funcionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -486,38 +518,40 @@ public class Produtos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Produtos().setVisible(true);
+                new Tela_funcionario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTable Tabela_funcionario;
+    private javax.swing.JButton bt_atualizar;
+    private javax.swing.JButton bt_cadastrar;
+    private javax.swing.JButton bt_excluir;
+    private javax.swing.JButton bt_pesquisar;
+    private javax.swing.JButton bt_produto;
+    private javax.swing.JButton bt_sair;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
     private java.awt.Label label5;
+    private java.awt.Label label6;
+    private javax.swing.JTextField tf_cpf;
+    private javax.swing.JTextField tf_data_nascimento;
+    private javax.swing.JTextField tf_funcao;
+    private javax.swing.JTextField tf_nome;
+    private javax.swing.JTextField tf_salario;
+    private javax.swing.JTextField tf_telefone;
     // End of variables declaration//GEN-END:variables
 }

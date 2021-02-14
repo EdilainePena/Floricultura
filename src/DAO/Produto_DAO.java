@@ -11,6 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
+import javax.swing.JOptionPane;
 import org.bson.Document;
 
 /**
@@ -22,23 +23,22 @@ public class Produto_DAO {
     Connection conexao = new Connection();
     private final MongoDatabase banco_de_dados;
     private final MongoCollection<Document> produtos;
-    Produto produto;
-
-    public Produto_DAO(Produto p) {
+    
+    public Produto_DAO() {
         banco_de_dados = conexao.banco_de_dados();
         produtos = banco_de_dados.getCollection("Produtos");
-        this.produto = p;
+       
 
     }
 
-    public void adicionar_Produto() {
+    public void adicionar_Produto(Produto produto) {
 
         Document novoProduto = new Document("Nome", produto.getNome())
                 .append("Preço de custo", produto.getPreco_custo())
                 .append("Preço de venda", produto.getPreco_venda())
                 .append("Quantidade disponivel", produto.getQuantidade_disponivel());
         produtos.insertOne(novoProduto);
-
+        JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!!!");
     }
 
     public Document buscar_Produto(String nome) {
@@ -63,7 +63,9 @@ public class Produto_DAO {
 
         try (MongoCursor cursor = produtos.find().iterator()) {
             while (cursor.hasNext()) {
-                System.out.println(cursor.next().toString());
+                Produto produto = new Produto();
+                produto.setNome(cursor.toString());
+                System.out.println(produto.getNome());
             }
            
         }
