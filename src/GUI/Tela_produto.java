@@ -15,7 +15,7 @@ import org.bson.Document;
  *
  * @author edila
  */
-public class Tela_produto extends javax.swing.JFrame {
+public final class Tela_produto extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
@@ -443,21 +443,25 @@ public class Tela_produto extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_excluirActionPerformed
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
+        
         Produto produto = new Produto();
         produto.setNome(tf_nome.getText());
         produto.setPreco_custo(Float.parseFloat(tf_preco_custo.getText()));
         produto.setPreco_venda(Float.parseFloat(tf_preco_venda.getText()));
         produto.setQuantidade_disponivel(Integer.parseInt(tf_quantidade.getText()));
         produto.setDescricao(tf_descricao.getText());
+        
         Produto_DAO p_dao = new Produto_DAO();
         p_dao.adicionar_Produto(produto);
+        
         JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!!!");
         limpar_campos();
         preencherTabelaCliente();
-        
+       
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     private void bt_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_atualizarActionPerformed
+        
         int selecionado = Tabela_produto.getSelectedRow();
 
         if (selecionado == -1) {//verifica se algum produto foi selecionado
@@ -489,7 +493,9 @@ public class Tela_produto extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_atualizarActionPerformed
 
     private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
-        // TODO add your handling code here:
+       Tela_login tl = new Tela_login();
+       tl.setVisible(true);
+       dispose();
     }//GEN-LAST:event_bt_sairActionPerformed
 
     private void tf_descricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descricaoActionPerformed

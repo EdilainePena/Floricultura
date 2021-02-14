@@ -442,7 +442,9 @@ public class Tela_funcionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_atualizarActionPerformed
 
     private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
-        // TODO add your handling code here:
+        Tela_login tl = new Tela_login();
+        tl.setVisible(true);
+        dispose();
     }//GEN-LAST:event_bt_sairActionPerformed
 
     private void tf_salarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_salarioActionPerformed

@@ -322,7 +322,6 @@
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="bt_cadastrar" min="-2" pref="68" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="bt_atualizar" min="-2" pref="68" max="-2" attributes="0"/>
