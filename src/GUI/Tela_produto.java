@@ -428,14 +428,15 @@ public class Tela_produto extends javax.swing.JFrame {
 
         if (opcao == 0) {//verifica se o usuario deseja excluir
             Produto_DAO p_dao = new Produto_DAO();
-           
-             if (!tf_pesquisa.getText().equals("")) {
+
+            if (!tf_pesquisa.getText().equals("")) {
                 Document produto = p_dao.buscar_Produto(tf_pesquisa.getText()).get(selecionado);
                 p_dao.remover_Produto(produto.getString("Nome"));
             } else {
                 Document produto = p_dao.listar_Produto().get(selecionado);
                 p_dao.remover_Produto(produto.getString("Nome"));
-            }  
+            }
+            JOptionPane.showMessageDialog(Tabela_produto, "Produto excluido com sucesso!");
         }
 
         preencherTabelaCliente();
@@ -450,13 +451,41 @@ public class Tela_produto extends javax.swing.JFrame {
         produto.setDescricao(tf_descricao.getText());
         Produto_DAO p_dao = new Produto_DAO();
         p_dao.adicionar_Produto(produto);
-        
+        JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!!!");
         limpar_campos();
         preencherTabelaCliente();
+        
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     private void bt_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_atualizarActionPerformed
+        int selecionado = Tabela_produto.getSelectedRow();
+
+        if (selecionado == -1) {//verifica se algum produto foi selecionado
+            JOptionPane.showMessageDialog(Tabela_produto, "Nenhum produto selecionado!");
+            return;
+        }
+
+        if (tf_nome.getText().equals("")) {
+            preencher_campos(selecionado);
+        }
         
+        else{
+            Produto produto = new Produto();
+            Produto_DAO p_dao = new Produto_DAO();
+            produto.setNome(tf_nome.getText());
+            produto.setPreco_custo(Float.parseFloat(tf_preco_custo.getText()));
+            produto.setPreco_venda(Float.parseFloat(tf_preco_venda.getText()));
+            produto.setQuantidade_disponivel(Integer.parseInt(tf_quantidade.getText()));
+            produto.setDescricao(tf_descricao.getText());
+            
+            p_dao.atualiizar_Produto(produto,tf_nome.getText());
+            JOptionPane.showMessageDialog(Tabela_produto, "Produto atualizado com sucesso!");
+            preencherTabelaCliente();
+            limpar_campos();
+        }
+        
+
+
     }//GEN-LAST:event_bt_atualizarActionPerformed
 
     private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
@@ -537,16 +566,31 @@ public class Tela_produto extends javax.swing.JFrame {
         }
     }
 
-    public void limpar_campos(){
-        
+    public void limpar_campos() {
+
         tf_nome.setText("");
         tf_descricao.setText("");
         tf_pesquisa.setText("");
         tf_preco_venda.setText("");
         tf_preco_custo.setText("");
         tf_quantidade.setText("");
-        
+
     }
+
+    public void preencher_campos(int selecionado) {
+        Produto_DAO p_dao = new Produto_DAO();
+
+        //Document produto = p_dao.buscar_Produto(tf_pesquisa.getText()).get(selecionado);//
+        Document produto = p_dao.listar_Produto().get(selecionado);
+
+        tf_nome.setText(produto.getString("Nome"));
+        tf_descricao.setText(produto.getString("Descrição"));
+        tf_preco_venda.setText(produto.getDouble("Preço de venda").toString());
+        tf_preco_custo.setText(produto.getDouble("Preço de custo").toString());
+        tf_quantidade.setText(produto.getInteger("Quantidade disponível").toString());
+
+    }
+
     /*
         DefaultTableModel modelo = (DefaultTableModel) Tabela_produto.getModel();
         modelo.setNumRows(0);
@@ -621,6 +665,7 @@ public class Tela_produto extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela_produto().setVisible(true);
+
             }
         });
     }

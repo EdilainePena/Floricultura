@@ -40,7 +40,6 @@ public class Produto_DAO {
                 .append("Quantidade disponível", produto.getQuantidade_disponivel())
                 .append("Descrição", produto.getDescricao());
         produtos.insertOne(novoProduto);
-        JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!!!");
     }
 
     public ArrayList<Document> buscar_Produto(String nome) {
@@ -57,7 +56,17 @@ public class Produto_DAO {
 
     }
 
-    public void atualiizar_Produto(Produto produto) {
+    public void atualiizar_Produto(Produto produto, String nome) {
+
+        produtos.updateOne(eq("Nome", nome),
+                new Document("$set",
+                    new Document("Nome", produto.getNome())
+                    .append("Preço de custo", produto.getPreco_custo())
+                    .append("Preço de venda", produto.getPreco_venda())
+                    .append("Quantidade disponível", produto.getQuantidade_disponivel())
+                    .append("Descrição", produto.getDescricao())
+                )
+        );
         
     }
 
