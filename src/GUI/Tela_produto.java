@@ -9,6 +9,7 @@ import DAO.Produto_DAO;
 import Model.Produto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Tela_produto extends javax.swing.JFrame {
      */
     public Tela_produto() {
         initComponents();
+        preencherTabelaCliente();
     }
 
     /**
@@ -124,15 +126,23 @@ public class Tela_produto extends javax.swing.JFrame {
         Tabela_produto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 7, 43), 1, true));
         Tabela_produto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nome", "Preço de custo", "Preço de venda", "Quantidade disponível", "Descrição"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(Tabela_produto);
 
         jLayeredPane3.setBackground(new java.awt.Color(215, 193, 235));
@@ -341,7 +351,8 @@ public class Tela_produto extends javax.swing.JFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(tf_pesquisa)
                         .addGap(5, 5, 5)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -397,7 +408,7 @@ public class Tela_produto extends javax.swing.JFrame {
         Tela_funcionario tf = new Tela_funcionario();
         tf.setVisible(true);
         dispose();
-        
+
     }//GEN-LAST:event_bt_funcionarioActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -405,22 +416,47 @@ public class Tela_produto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void bt_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluirActionPerformed
-        // TODO add your handling code here:
+        int selecionado = Tabela_produto.getSelectedRow();//recebe o indice na lista da linha selecionada
+        int opcao;
+
+        if (selecionado == -1) {//verifica se algum serviço foi selecionado
+            JOptionPane.showMessageDialog(Tabela_produto, "Nenhum produto selecionado!");
+            return;
+        }
+        //opcao recebe 0 para sim,1 para nao e 2 para cancelar
+        opcao = JOptionPane.showConfirmDialog(Tabela_produto, "Tem certeza que deseja excluir esse produto?");
+
+        if (opcao == 0) {//verifica se o usuario deseja excluir
+            Produto_DAO p_dao = new Produto_DAO();
+           
+             if (!tf_pesquisa.getText().equals("")) {
+                Document produto = p_dao.buscar_Produto(tf_pesquisa.getText()).get(selecionado);
+                p_dao.remover_Produto(produto.getString("Nome"));
+            } else {
+                Document produto = p_dao.listar_Produto().get(selecionado);
+                p_dao.remover_Produto(produto.getString("Nome"));
+            }  
+        }
+
+        preencherTabelaCliente();
     }//GEN-LAST:event_bt_excluirActionPerformed
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
-      Produto produto = new Produto();
-      produto.setNome(tf_nome.getText());
-      produto.setPreco_custo(Float.parseFloat(tf_preco_custo.getText()));
-      produto.setPreco_venda(Float.parseFloat(tf_preco_venda.getText()));
-      produto.setQuantidade_disponivel(Integer.parseInt(tf_quantidade.getText()));
-      
-      Produto_DAO produto_dao = new Produto_DAO();
-      produto_dao.adicionar_Produto(produto);
+        Produto produto = new Produto();
+        produto.setNome(tf_nome.getText());
+        produto.setPreco_custo(Float.parseFloat(tf_preco_custo.getText()));
+        produto.setPreco_venda(Float.parseFloat(tf_preco_venda.getText()));
+        produto.setQuantidade_disponivel(Integer.parseInt(tf_quantidade.getText()));
+        produto.setDescricao(tf_descricao.getText());
+        Produto_DAO p_dao = new Produto_DAO();
+        p_dao.adicionar_Produto(produto);
+        
+        limpar_campos();
+        preencherTabelaCliente();
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     private void bt_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_atualizarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bt_atualizarActionPerformed
 
     private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
@@ -448,23 +484,70 @@ public class Tela_produto extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_nomeActionPerformed
 
     private void bt_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_pesquisarActionPerformed
-    
-         Produto_DAO pd = new Produto_DAO();
-         pd.listar_Proeduto();
-         
+
+        if (tf_pesquisa.getText().equals("")) {
+            preencherTabelaCliente();
+        } else {
+            Pesquisar_produto(tf_pesquisa.getText());
+        }
+
     }//GEN-LAST:event_bt_pesquisarActionPerformed
 
     private void tf_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_pesquisaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_pesquisaActionPerformed
 
-     public void preencherTabelaCliente() {
-         
-         Produto_DAO pd = new Produto_DAO();
-         pd.listar_Proeduto();
-         
-     }
-/*
+    public void preencherTabelaCliente() {
+
+        Produto_DAO p_dao = new Produto_DAO();
+        DefaultTableModel modelo = (DefaultTableModel) Tabela_produto.getModel();
+        modelo.setNumRows(0);
+
+        for (Document listar_Produto : p_dao.listar_Produto()) {
+            modelo.addRow(new Object[]{
+                listar_Produto.get("_id"),
+                listar_Produto.getString("Nome"),
+                listar_Produto.getDouble("Preço de custo"),
+                listar_Produto.getDouble("Preço de venda"),
+                listar_Produto.getInteger("Quantidade disponível"),
+                listar_Produto.getString("Descrição")
+            });
+        }
+    }
+
+    @SuppressWarnings("empty-statement")
+    public void Pesquisar_produto(String nome) {
+        Produto_DAO p_dao = new Produto_DAO();
+        DefaultTableModel modelo = (DefaultTableModel) Tabela_produto.getModel();
+        modelo.setNumRows(0);
+
+        try {
+            for (Document listar_Produto : p_dao.buscar_Produto(nome)) {
+                modelo.addRow(new Object[]{
+                    listar_Produto.get("_id"),
+                    listar_Produto.getString("Nome"),
+                    listar_Produto.getDouble("Preço de custo"),
+                    listar_Produto.getDouble("Preço de venda"),
+                    listar_Produto.getInteger("Quantidade disponivel"),
+                    listar_Produto.getString("Descrição")
+                });
+            }
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Produto não encontrado !");
+        }
+    }
+
+    public void limpar_campos(){
+        
+        tf_nome.setText("");
+        tf_descricao.setText("");
+        tf_pesquisa.setText("");
+        tf_preco_venda.setText("");
+        tf_preco_custo.setText("");
+        tf_quantidade.setText("");
+        
+    }
+    /*
         DefaultTableModel modelo = (DefaultTableModel) Tabela_produto.getModel();
         modelo.setNumRows(0);
         Produto_DAO produto_DAO = new Produto_DAO();
@@ -475,8 +558,7 @@ public class Tela_produto extends javax.swing.JFrame {
             });
         }
     }
-  */
-  
+     */
     /**
      * @param args the command line arguments
      */
