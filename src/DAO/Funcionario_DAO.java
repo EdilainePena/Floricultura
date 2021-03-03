@@ -5,7 +5,6 @@
  */
 package DAO;
 
-import Conexão.Connection;
 import Model.Funcionario;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -13,6 +12,8 @@ import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import javax.swing.JOptionPane;
 import org.bson.Document;
+
+import Conexao.Connection;
 
 /**
  *
